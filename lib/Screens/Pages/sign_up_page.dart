@@ -6,93 +6,17 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: mainColor,
       body: Container(
-        margin: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 18.0),
+        margin: EdgeInsets.symmetric(horizontal: 30.0),
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Blogging", style: titleFontStyle),
               SizedBox(height: 50.0),
-              Container(
-                margin: EdgeInsets.only(bottom: 18.0),
-                child: Theme(
-                  data: ThemeData(
-                    primaryColor: Colors.white,
-                  ),
-                  child: TextField(
-                    cursorColor: Colors.white,
-                    style: whiteFontStyle.copyWith(fontSize: 15.0),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email, color: Colors.white),
-                      border: OutlineInputBorder(),
-                      labelText: 'Full Name',
-                      labelStyle: whiteFontStyle.copyWith(fontSize: 15.0),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 18.0),
-                child: Theme(
-                  data: ThemeData(
-                    primaryColor: Colors.white,
-                  ),
-                  child: TextField(
-                    cursorColor: Colors.white,
-                    style: whiteFontStyle.copyWith(fontSize: 15.0),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email, color: Colors.white),
-                      border: OutlineInputBorder(),
-                      labelText: 'Valid Email',
-                      labelStyle: whiteFontStyle.copyWith(fontSize: 15.0),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 18.0),
-                child: Theme(
-                  data: ThemeData(
-                    primaryColor: Colors.white,
-                  ),
-                  child: TextField(
-                    cursorColor: Colors.white,
-                    style: whiteFontStyle.copyWith(fontSize: 15.0),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email, color: Colors.white),
-                      border: OutlineInputBorder(),
-                      labelText: 'Valid Email',
-                      labelStyle: whiteFontStyle.copyWith(fontSize: 15.0),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 18.0),
-                child: Theme(
-                  data: ThemeData(
-                    primaryColor: Colors.white,
-                  ),
-                  child: TextField(
-                    cursorColor: Colors.white,
-                    style: whiteFontStyle.copyWith(fontSize: 15.0),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email, color: Colors.white),
-                      border: OutlineInputBorder(),
-                      labelText: 'Valid Email',
-                      labelStyle: whiteFontStyle.copyWith(fontSize: 15.0),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                    ),
-                  ),
-                ),
-              ),
+              CustomTextField(cIcon: Icons.person, clabel: "Full Name"),
+              CustomTextField(cIcon: Icons.email, clabel: "Valid Email"),
+              CustomTextField(cIcon: Icons.lock, clabel: "Password"),
+              CustomTextField(cIcon: Icons.lock, clabel: "Confirm Password"),
               Container(
                 width: double.infinity,
                 height: 55.0,
