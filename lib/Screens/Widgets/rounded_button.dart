@@ -4,8 +4,15 @@ class CustomRoundedButton extends StatelessWidget {
   final String cTxt;
   final Color cTxtColor, cBgColor;
   final double cBottom;
+  final Function cRoute;
 
-  CustomRoundedButton({this.cTxt, this.cTxtColor, this.cBgColor, this.cBottom});
+  CustomRoundedButton({
+    this.cTxt,
+    this.cTxtColor,
+    this.cBgColor,
+    this.cBottom,
+    this.cRoute,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,7 @@ class CustomRoundedButton extends StatelessWidget {
                 style: blackFontStyle.copyWith(color: cTxtColor),
               ),
         color: cBgColor,
-        onPressed: () {},
+        onPressed: (cRoute == null) ? () {} : cRoute,
       ),
     );
   }
