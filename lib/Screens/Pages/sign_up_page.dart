@@ -17,21 +17,11 @@ class SignUpPage extends StatelessWidget {
               CustomTextField(cIcon: Icons.email, clabel: "Valid Email"),
               CustomTextField(cIcon: Icons.lock, clabel: "Password"),
               CustomTextField(cIcon: Icons.lock, clabel: "Confirm Password"),
-              Container(
-                width: double.infinity,
-                height: 55.0,
-                margin: EdgeInsets.only(bottom: 18.0),
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  child: Text(
-                    "Sign Up",
-                    style: blackFontStyle.copyWith(color: Colors.blue),
-                  ),
-                  color: Colors.white,
-                  onPressed: () {},
-                ),
+              CustomRoundedButton(
+                cTxt: "Sign Up",
+                cTxtColor: Colors.blue,
+                cBgColor: Colors.white,
+                cBottom: 18.0,
               ),
               RichText(
                 text: TextSpan(
