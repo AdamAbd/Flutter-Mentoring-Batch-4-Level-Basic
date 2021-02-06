@@ -12,6 +12,10 @@ class _CreatePostState extends State<CreatePost> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+          onTap: () {},
+          child: Icon(Icons.arrow_back, color: Colors.black),
+        ),
         title: Text("Create a Post", style: blackFontStyle),
         backgroundColor: mainColor,
       ),
