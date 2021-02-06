@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="flutter_mentoring_basic_batch_4"
+        android:label="FMBB 4"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
