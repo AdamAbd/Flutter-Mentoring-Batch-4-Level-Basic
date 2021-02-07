@@ -1,16 +1,9 @@
 # flutter_mentoring_basic_batch_4
 
-A new Flutter project.
+Flutter projek untuk hasil code task FMBB 4
 
-## Getting Started
+## Task 1- Design UI Flutter Apps
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](https://user-images.githubusercontent.com/55482107/107141785-b2f1d400-695d-11eb-8c11-045682a79951.jpg)
+![alt text](https://user-images.githubusercontent.com/55482107/107141789-b5ecc480-695d-11eb-9394-360d07994423.jpg)
+![alt text](https://user-images.githubusercontent.com/55482107/107141791-b7b68800-695d-11eb-89ab-5c2b181d06ec.jpg)
