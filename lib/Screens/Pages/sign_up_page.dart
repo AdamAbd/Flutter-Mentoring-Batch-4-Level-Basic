@@ -22,14 +22,7 @@ class SignUpPage extends StatelessWidget {
                 cTxtColor: Colors.blue,
                 cBgColor: Colors.white,
                 cBottom: 18.0,
-                cRoute: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CreatePost(),
-                    ),
-                  );
-                },
+                cRoute: () {},
               ),
               RichText(
                 text: TextSpan(
