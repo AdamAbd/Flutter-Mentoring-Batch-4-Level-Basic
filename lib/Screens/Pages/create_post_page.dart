@@ -1,13 +1,6 @@
 part of 'pages.dart';
 
-class CreatePost extends StatefulWidget {
-  CreatePost({Key key}) : super(key: key);
-
-  @override
-  _CreatePostState createState() => _CreatePostState();
-}
-
-class _CreatePostState extends State<CreatePost> {
+class CreatePost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +11,10 @@ class _CreatePostState extends State<CreatePost> {
           },
           child: Icon(Icons.arrow_back, color: Colors.black),
         ),
-        title: Text("Create a Post", style: blackFontStyle),
+        title: Text(
+          "Create a Post",
+          style: titleFontStyle.copyWith(fontSize: 18.0),
+        ),
         backgroundColor: mainColor,
       ),
       body: ListView(

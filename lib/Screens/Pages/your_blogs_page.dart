@@ -14,7 +14,7 @@ class YourBlogsPage extends StatelessWidget {
         ),
         title: Text(
           "Your Blogs",
-          style: blackFontStyle,
+          style: titleFontStyle.copyWith(fontSize: 18.0),
         ),
       ),
       drawer: Drawer(),
@@ -54,7 +54,7 @@ class YourBlogsPage extends StatelessWidget {
           Divider(),
           Container(
             height: 120.0,
-            padding: EdgeInsets.only(bottom: 60.0),
+            padding: EdgeInsets.only(bottom: 25.0),
             child: ListTile(
               leading: CircleAvatar(
                 radius: 30.0,
@@ -68,7 +68,7 @@ class YourBlogsPage extends StatelessWidget {
                 "What is flutter?",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
+                  fontSize: 18.0,
                   color: Colors.black,
                 ),
               ),

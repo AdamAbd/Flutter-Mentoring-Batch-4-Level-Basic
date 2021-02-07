@@ -1,16 +1,12 @@
 part of 'widgets.dart';
 
-class CustomTextField extends StatefulWidget {
+class CustomTextField extends StatelessWidget {
   final String clabel;
   final IconData cIcon;
+  final bool cObscureText;
 
-  CustomTextField({this.clabel, this.cIcon});
+  CustomTextField({this.clabel, this.cIcon, this.cObscureText});
 
-  @override
-  _CustomTextFieldState createState() => _CustomTextFieldState();
-}
-
-class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,10 +18,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
         child: TextField(
           cursorColor: Colors.white,
           style: whiteFontStyle.copyWith(fontSize: 15.0),
+          obscureText: (cObscureText != null) ?? true,
           decoration: InputDecoration(
-            prefixIcon: Icon(widget.cIcon, color: Colors.white),
+            prefixIcon: Icon(cIcon, color: Colors.white),
             border: OutlineInputBorder(),
-            labelText: widget.clabel,
+            labelText: clabel,
             labelStyle: whiteFontStyle.copyWith(fontSize: 15.0),
             enabledBorder:
                 OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
