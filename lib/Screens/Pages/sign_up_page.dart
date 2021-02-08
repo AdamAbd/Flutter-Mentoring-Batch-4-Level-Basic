@@ -16,7 +16,10 @@ class SignUpPage extends StatelessWidget {
                   Text("Blogging", style: titleFontStyle),
                   SizedBox(height: 50.0),
                   CustomTextField(cIcon: Icons.person, clabel: "Full Name"),
-                  CustomTextField(cIcon: Icons.email, clabel: "Valid Email"),
+                  CustomTextField(
+                    cIcon: Icons.alternate_email,
+                    clabel: "Valid Email",
+                  ),
                   CustomTextField(
                     cIcon: Icons.lock,
                     clabel: "Password",
