@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+import 'Screens/Pages/pages.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,29 +11,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Task 2 Basic - UI design Payment Card',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: ConvertionaPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Flutter Demo Home Page"),
-      ),
-    );
-  }
-}
+// class MyCupertinoApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return CupertinoApp(
+//       title: 'Task 2 Basic - UI design Payment Card',
+//       debugShowCheckedModeBanner: false,
+//       home: PaymentCard(),
+//     );
+//   }
+// }
