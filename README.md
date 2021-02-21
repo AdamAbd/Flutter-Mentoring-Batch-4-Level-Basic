@@ -1,16 +1,7 @@
 # flutter_mentoring_basic_batch_4
 
-A new Flutter project.
+Flutter projek untuk hasil code task FMBB 4
 
-## Getting Started
+##  Task 3 Flutter Basic
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/55482107/108617386-79829380-7448-11eb-933b-ae156f6799da.jpeg https://user-images.githubusercontent.com/55482107/108617385-78e9fd00-7448-11eb-83ce-0bfbe475f2ca.jpeg https://user-images.githubusercontent.com/55482107/108617384-77203980-7448-11eb-9211-1494313bd7f3.jpeg
