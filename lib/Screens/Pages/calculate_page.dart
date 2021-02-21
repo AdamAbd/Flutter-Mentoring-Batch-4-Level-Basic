@@ -67,125 +67,79 @@ class _CalculatePageState extends State<CalculatePage> {
             child: Column(
               children: [
                 /// Bagian memasukkan panjang
-                Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    border: Border.all(
-                      color: Colors.black12,
-                      width: 1,
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  validator: RequiredValidator(errorText: "Wajib"),
+                  decoration: InputDecoration(
+                    hintText: "Masukkan Panjang",
+                    hintStyle: TextStyle(color: Colors.grey),
+                    suffixText: "m",
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: clearLength,
                     ),
+                    border: OutlineInputBorder(),
                   ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    validator: (value) => value.length < 1
-                        ? 'Input panjang tidak boleh kosong'
-                        : null,
-                    decoration: InputDecoration(
-                      hintText: "Masukkan Panjang",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      suffixText: "m",
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
-                        onPressed: clearLength,
-                      ),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                    ),
-                    onChanged: (text) {
-                      var rv = double.tryParse(text);
-                      if (rv != null) {
-                        setState(() {
-                          _numberLenght = rv;
-                        });
-                      }
-                    },
-                    controller: fieldLength,
-                  ),
+                  onChanged: (text) {
+                    var rv = double.tryParse(text);
+                    if (rv != null) {
+                      setState(() {
+                        _numberLenght = rv;
+                      });
+                    }
+                  },
+                  controller: fieldLength,
                 ),
-                SizedBox(height: 22.0),
+                SizedBox(height: 20.0),
 
                 /// Bagian memasukkan lebar
-                Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    border: Border.all(
-                      color: Colors.black12,
-                      width: 1,
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  validator: RequiredValidator(errorText: "Wajib"),
+                  decoration: InputDecoration(
+                    hintText: "Masukkan Lebar",
+                    hintStyle: TextStyle(color: Colors.grey),
+                    suffixText: "m",
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: clearWidth,
                     ),
+                    border: OutlineInputBorder(),
                   ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    validator: (value) => value.length < 1
-                        ? 'Input lebar tidak boleh kosong'
-                        : null,
-                    decoration: InputDecoration(
-                      hintText: "Masukkan Lebar",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      suffixText: "m",
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
-                        onPressed: clearWidth,
-                      ),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                    ),
-                    onChanged: (text) {
-                      var rv = double.tryParse(text);
-                      if (rv != null) {
-                        setState(() {
-                          _numberWidth = rv;
-                        });
-                      }
-                    },
-                    controller: fieldWidth,
-                  ),
+                  onChanged: (text) {
+                    var rv = double.tryParse(text);
+                    if (rv != null) {
+                      setState(() {
+                        _numberWidth = rv;
+                      });
+                    }
+                  },
+                  controller: fieldWidth,
                 ),
-                SizedBox(height: 22.0),
+                SizedBox(height: 20.0),
 
                 /// Bagian memasukkan tinggi
-                Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    border: Border.all(
-                      color: Colors.black12,
-                      width: 1,
+                TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: "Masukkan Tinggi",
+                    hintStyle: TextStyle(color: Colors.grey),
+                    suffixText: "m",
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: clearHeight,
                     ),
+                    border: OutlineInputBorder(),
                   ),
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      hintText: "Masukkan Tinggi",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      suffixText: "m",
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
-                        onPressed: clearHeight,
-                      ),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                    ),
-                    onChanged: (text) {
-                      var rv = double.tryParse(text);
-                      if (rv != null) {
-                        setState(() {
-                          _numberHeight = rv;
-                        });
-                      }
-                    },
-                    controller: fieldHeight,
-                  ),
+                  onChanged: (text) {
+                    var rv = double.tryParse(text);
+                    if (rv != null) {
+                      setState(() {
+                        _numberHeight = rv;
+                      });
+                    }
+                  },
+                  controller: fieldHeight,
                 ),
                 SizedBox(height: 31.0),
 

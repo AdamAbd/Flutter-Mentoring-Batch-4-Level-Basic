@@ -84,12 +84,13 @@ class _ConvertionaPageState extends State<ConvertionaPage> {
               children: [
                 /// Bagian memilih konversi 1
                 Container(
+                  height: 60,
                   padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     border: Border.all(
-                      color: Colors.black12,
-                      width: 1,
+                      color: Colors.grey[700],
+                      width: 0.7,
                     ),
                   ),
                   child: DropdownButtonHideUnderline(
@@ -116,43 +117,27 @@ class _ConvertionaPageState extends State<ConvertionaPage> {
                 SizedBox(height: 10.0),
 
                 /// Bagian memasukkan angka
-                Container(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    border: Border.all(
-                      color: Colors.black12,
-                      width: 1,
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  validator: RequiredValidator(errorText: "Wajib"),
+                  decoration: InputDecoration(
+                    labelText: "Masukkan Angka",
+                    labelStyle: TextStyle(color: Colors.grey),
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: clearText,
                     ),
+                    border: OutlineInputBorder(),
                   ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    validator: (value) => value.length < 1
-                        ? 'Input angka tidak boleh kosong'
-                        : null,
-                    decoration: InputDecoration(
-                      hintText: "Masukkan Angka",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      suffixIcon: IconButton(
-                        icon: Icon(Icons.clear),
-                        onPressed: clearText,
-                      ),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                    ),
-                    onChanged: (text) {
-                      var rv = double.tryParse(text);
-                      if (rv != null) {
-                        setState(() {
-                          _numberForm = rv;
-                        });
-                      }
-                    },
-                    controller: fieldText,
-                  ),
+                  onChanged: (text) {
+                    var rv = double.tryParse(text);
+                    if (rv != null) {
+                      setState(() {
+                        _numberForm = rv;
+                      });
+                    }
+                  },
+                  controller: fieldText,
                 ),
                 Container(
                   margin: const EdgeInsets.all(10.0),
@@ -161,12 +146,13 @@ class _ConvertionaPageState extends State<ConvertionaPage> {
 
                 /// Bagian memilih konversi 2
                 Container(
+                  height: 60.0,
                   padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     border: Border.all(
-                      color: Colors.black12,
-                      width: 1,
+                      color: Colors.grey[700],
+                      width: 0.7,
                     ),
                   ),
                   child: DropdownButtonHideUnderline(

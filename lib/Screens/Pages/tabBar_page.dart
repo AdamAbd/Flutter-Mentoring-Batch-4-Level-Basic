@@ -7,13 +7,14 @@ class TabBarPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.crop_square_rounded)),
+              Tab(icon: Icon(Icons.square_foot)),
             ],
           ),
-          title: Text('Tabs Demo'),
+          title: Text("Math Calculator"),
         ),
         body: TabBarView(
           children: [
