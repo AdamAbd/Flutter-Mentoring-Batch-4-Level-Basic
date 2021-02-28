@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   easy_rich_text: ^0.5.3
   form_field_validator: ^1.0.1
+  http: ^0.12.2
 
 dev_dependencies:
   flutter_test:
