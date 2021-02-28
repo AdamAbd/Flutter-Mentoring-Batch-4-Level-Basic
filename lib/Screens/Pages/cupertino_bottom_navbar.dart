@@ -9,7 +9,11 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
-  List<Widget> _widgetOptions = <Widget>[GalleryPage(), NewsPage(), NewsPage()];
+  List<Widget> _widgetOptions = <Widget>[
+    GalleryPage(),
+    NewsPage(),
+    ProfilePage(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {

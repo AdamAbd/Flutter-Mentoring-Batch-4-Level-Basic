@@ -14,3 +14,4 @@ part 'gallery_page.dart';
 part 'news_page.dart';
 part 'cupertino_bottom_navbar.dart';
 part 'dictionary_page.dart';
+part 'profile_page.dart';
