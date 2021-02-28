@@ -13,3 +13,4 @@ import 'package:flutter_mentoring_basic_batch_4/Screens/Widgets/widgets.dart';
 part 'gallery_page.dart';
 part 'news_page.dart';
 part 'cupertino_bottom_navbar.dart';
+part 'dictionary_page.dart';

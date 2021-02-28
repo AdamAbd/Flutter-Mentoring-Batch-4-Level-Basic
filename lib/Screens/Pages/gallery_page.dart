@@ -55,7 +55,7 @@ class _GalleryPageState extends State<GalleryPage> {
                   onTap: () {
                     Navigator.push(context, CupertinoPageRoute(
                       builder: (context) {
-                        return DetailBerita(listModel, index);
+                        return DetailGaleri(listModel, index);
                       },
                     ));
                   },
@@ -73,10 +73,10 @@ class _GalleryPageState extends State<GalleryPage> {
   }
 }
 
-class DetailBerita extends StatelessWidget {
+class DetailGaleri extends StatelessWidget {
   final List<ModelGallery> listModel;
   final int index;
-  DetailBerita(this.listModel, this.index);
+  DetailGaleri(this.listModel, this.index);
 
   @override
   Widget build(BuildContext context) {

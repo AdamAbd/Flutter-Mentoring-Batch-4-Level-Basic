@@ -36,7 +36,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onTap: _onItemTapped,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return DictionaryPage();
+            },
+          ));
+        },
         child: Icon(Icons.menu_book_rounded),
       ),
     );
