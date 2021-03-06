@@ -23,9 +23,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.0
   easy_rich_text: ^0.5.3
   form_field_validator: ^1.0.1
+  google_fonts: ^1.1.2
   http: ^0.12.2
 
 dev_dependencies:

@@ -1,8 +1,6 @@
 part of 'pages.dart';
 
 class DictionaryPage extends StatefulWidget {
-  DictionaryPage({Key key}) : super(key: key);
-
   @override
   _DictionaryPageState createState() => _DictionaryPageState();
 }
@@ -55,69 +53,103 @@ class _DictionaryPageState extends State<DictionaryPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: true,
-      resizeToAvoidBottomPadding: true,
-      appBar: CupertinoNavigationBar(
-        middle: Text("Kamus Peternakan"),
+    return CupertinoPageScaffold(
+      resizeToAvoidBottomInset: false,
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Kamus", style: GoogleFonts.openSans()),
+        previousPageTitle: "Kembali",
+        backgroundColor: Colors.white,
+        border: null,
       ),
-      body: SingleChildScrollView(
+      child: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: EdgeInsets.all(4.0),
-              color: Colors.blue,
-              child: CupertinoTextField(
-                controller: searchController,
-                onChanged: onSearch,
-                // expands: true,
-                prefix: Padding(
-                  padding: const EdgeInsets.only(left: 7.0),
-                  child: Icon(Icons.search, color: Colors.grey[400]),
-                ),
-                prefixMode: OverlayVisibilityMode.notEditing,
-                placeholder: "Search",
-                clearButtonMode: OverlayVisibilityMode.editing,
-              ),
-            ),
-            loading
-                ? Center(child: CupertinoActivityIndicator())
-                : Container(
-                    height: MediaQuery.of(context).size.height - 103,
-                    child:
-                        search.length != 0 || searchController.text.isNotEmpty
-                            ? ListView.builder(
-                                itemCount: search.length,
-                                itemBuilder: (context, i) {
-                                  final nDataList = search[i];
-                                  return ExpansionTile(
-                                    title: Text(nDataList.title),
-                                    children: [
-                                      Container(
-                                        padding: EdgeInsets.all(10.0),
-                                        child: Text(nDataList.content),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              )
-                            : ListView.builder(
-                                itemCount: listModel.length,
-                                itemBuilder: (context, index) {
-                                  final nDataList = listModel[index];
-                                  return ExpansionTile(
-                                    title: Text(nDataList.title),
-                                    children: [
-                                      Container(
-                                        padding: EdgeInsets.all(10.0),
-                                        child: Text(nDataList.content),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
+            Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 20.0),
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      CupertinoTextField(
+                        controller: searchController,
+                        onChanged: onSearch,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(8.0),
+                            )),
+                        prefix: Padding(
+                          padding: const EdgeInsets.only(left: 7.0),
+                          child: Icon(Icons.search, color: Colors.grey[500]),
+                        ),
+                        prefixMode: OverlayVisibilityMode.notEditing,
+                        placeholder: "Search",
+                        clearButtonMode: OverlayVisibilityMode.editing,
+                      ),
+                    ],
                   ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey[300], width: 0.6),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height - 126,
+              child: loading
+                  ? Center(child: CupertinoActivityIndicator())
+                  : (search.length != 0 || searchController.text.isNotEmpty)
+                      ? ListView.builder(
+                          itemCount: search.length,
+                          itemBuilder: (context, i) {
+                            final nDataList = search[i];
+                            return Card(
+                              child: ExpansionTile(
+                                title: Text(
+                                  nDataList.title,
+                                  style: GoogleFonts.openSans(),
+                                ),
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Text(
+                                      nDataList.content,
+                                      style: GoogleFonts.openSans(),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        )
+                      : ListView.builder(
+                          itemCount: listModel.length,
+                          itemBuilder: (context, index) {
+                            final nDataList = listModel[index];
+                            return Card(
+                              child: ExpansionTile(
+                                title: Text(
+                                  nDataList.title,
+                                  style: GoogleFonts.openSans(),
+                                ),
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Text(
+                                      nDataList.content,
+                                      style: GoogleFonts.openSans(),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+            ),
           ],
         ),
       ),

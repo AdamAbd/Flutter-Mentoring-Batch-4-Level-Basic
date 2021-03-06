@@ -1,16 +1,16 @@
 part of "pages.dart";
 
-class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
+class CBNB extends StatefulWidget {
+  CBNB({Key key}) : super(key: key);
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  _CBNBState createState() => _CBNBState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _CBNBState extends State<CBNB> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-    GalleryPage(),
+    HomePage(),
     NewsPage(),
     ProfilePage(),
   ];
@@ -25,30 +25,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: const Text('PeternakanApp'),
+        middle: Text('PeternakanApp', style: GoogleFonts.openSans()),
+        backgroundColor: Colors.white,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.photo), label: 'Galeri'),
-          BottomNavigationBarItem(icon: Icon(Icons.mail), label: 'News'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_rounded),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.receipt_long_rounded),
+            label: 'News',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return DictionaryPage();
-            },
-          ));
-        },
-        child: Icon(Icons.menu_book_rounded),
-      ),
+      floatingActionButton: CustomFAB(),
     );
   }
 }

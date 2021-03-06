@@ -148,6 +148,7 @@ class DetailBerita extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: CustomFAB(),
     );
   }
 }
