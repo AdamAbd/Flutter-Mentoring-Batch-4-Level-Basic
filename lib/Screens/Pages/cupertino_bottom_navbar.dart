@@ -8,17 +8,13 @@ class CBNB extends StatefulWidget {
 
 class _CBNBState extends State<CBNB> {
   int _selectedIndex = 0;
-
-  List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    NewsPage(),
-    ProfilePage(),
-  ];
+  final PageController _pageController = PageController();
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+    _pageController.jumpToPage(index);
   }
 
   @override
@@ -28,8 +24,18 @@ class _CBNBState extends State<CBNB> {
         middle: Text('PeternakanApp', style: GoogleFonts.openSans()),
         backgroundColor: Colors.white,
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: PageView(
+        controller: _pageController,
+        children: <Widget>[
+          HomePage(),
+          NewsPage(),
+          ProfilePage(),
+        ],
+        onPageChanged: (page) {
+          setState(() {
+            _selectedIndex = page;
+          });
+        },
       ),
       bottomNavigationBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[

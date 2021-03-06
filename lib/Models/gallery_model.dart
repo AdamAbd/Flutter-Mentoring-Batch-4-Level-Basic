@@ -9,38 +9,33 @@ String modelGalleryToJson(List<ModelGallery> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class ModelGallery {
-  String id, title, photo, level, dataWhat, dataUnique, dataPlus, dataMinus;
-
   ModelGallery({
     this.id,
     this.title,
+    this.picture,
     this.photo,
-    this.level,
-    this.dataWhat,
-    this.dataUnique,
-    this.dataPlus,
-    this.dataMinus,
+    this.content,
   });
+
+  String id;
+  String title;
+  String picture;
+  String photo;
+  String content;
 
   factory ModelGallery.fromJson(Map<String, dynamic> json) => ModelGallery(
         id: json["id"],
         title: json["title"],
+        picture: json["picture"],
         photo: json["photo"],
-        level: json["level"],
-        dataWhat: json["dataWhat"],
-        dataUnique: json["dataUnique"],
-        dataPlus: json["dataPlus"],
-        dataMinus: json["dataMinus"],
+        content: json["content"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
+        "picture": picture,
         "photo": photo,
-        "level": level,
-        "dataWhat": dataWhat,
-        "dataUnique": dataUnique,
-        "dataPlus": dataPlus,
-        "dataMinus": dataMinus,
+        "content": content,
       };
 }

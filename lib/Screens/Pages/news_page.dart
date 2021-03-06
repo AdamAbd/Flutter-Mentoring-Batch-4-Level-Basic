@@ -33,53 +33,82 @@ class _NewsPageState extends State<NewsPage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    getData();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      child: loading
-          ? Center(child: CupertinoActivityIndicator())
-          : ListView.builder(
-              itemCount: listModel.length,
-              itemBuilder: (context, index) {
-                final nDataList = listModel[index];
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(context, CupertinoPageRoute(
-                      builder: (context) {
-                        return DetailBerita(listModel, index);
-                      },
-                    ));
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 110.0,
-                    margin: EdgeInsets.only(top: 10.0),
-                    child: Card(
-                      child: Center(
-                        child: ListTile(
-                          title: Container(
-                            child: Text(nDataList.title, maxLines: 3),
-                            height: 70.0,
-                          ),
-                          subtitle: Text(nDataList.registrationDate.toString()),
-                          trailing: Container(
-                            height: 70.0,
-                            width: 70.0,
-                            child: Image.network(
-                              nDataList.picture,
-                              fit: BoxFit.fitWidth,
+    return loading
+        ? Center(child: CupertinoActivityIndicator())
+        : ListView.builder(
+            itemCount: listModel.length,
+            itemBuilder: (context, index) {
+              final nDataList = listModel[index];
+              return InkWell(
+                onTap: () {
+                  Navigator.push(context, CupertinoPageRoute(
+                    builder: (context) {
+                      return DetailBerita(listModel, index);
+                    },
+                  ));
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 100.0,
+                  margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Text(nDataList.title,
+                                  style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2),
+                              width: 220.0,
                             ),
+                            Text(
+                              nDataList.registrationDate.toString(),
+                              style: GoogleFonts.openSans(
+                                fontSize: 12.0,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 100,
+                        width: 90.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              nDataList.picture,
+                            ),
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                );
-              },
-            ),
-    );
+                ),
+              );
+            },
+          );
   }
 }
 
@@ -95,15 +124,47 @@ class DetailBerita extends StatelessWidget {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              title: Text(
-                'Floating app bar',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
+              backgroundColor: Colors.white,
+              titleSpacing: 0.0,
+              automaticallyImplyLeading: false,
+              title: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Stack(
+                  alignment: AlignmentDirectional.topStart,
+                  children: [
+                    Container(
+                      width: 92.0,
+                      height: 24.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.horizontal(
+                            right: Radius.circular(8.0)),
+                        color: Colors.white70,
+                      ),
+                    ),
+                    Container(
+                      width: 92.0,
+                      height: 24.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.horizontal(
+                            right: Radius.circular(8.0)),
+                        color: Colors.white54,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.arrow_back_ios_rounded, color: Colors.blue),
+                        Text("Kembali",
+                            style: GoogleFonts.openSans(
+                              fontSize: 14.0,
+                              color: Colors.blue,
+                            ))
+                      ],
+                    ),
+                  ],
                 ),
               ),
-              centerTitle: true,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.network(
@@ -120,27 +181,31 @@ class DetailBerita extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(32.0),
+                padding: EdgeInsets.all(20.0),
                 child: Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(bottom: 8.0),
-                        child: Text(
-                          listModel[index].title,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.brown),
+                      Text(
+                        listModel[index].title,
+                        style: GoogleFonts.openSans(
+                          fontWeight: FontWeight.bold,
                         ),
+                      ),
+                      Text(
+                        listModel[index].registrationDate.toString(),
+                        style: GoogleFonts.openSans(fontSize: 12.0),
                       ),
                     ],
                   ),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(32.0),
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
-                  listModel[index].content,
+                  listModel[index].content +
+                      "\n\nPenulis: " +
+                      listModel[index].writter,
                   softWrap: true,
                 ),
               )
