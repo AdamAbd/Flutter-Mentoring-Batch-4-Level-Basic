@@ -1,7 +1,9 @@
 part of "pages.dart";
 
 class CBNB extends StatefulWidget {
-  CBNB({Key key}) : super(key: key);
+  final String username;
+  CBNB(this.username);
+
   @override
   _CBNBState createState() => _CBNBState();
 }
@@ -27,7 +29,15 @@ class _CBNBState extends State<CBNB> {
         trailing: IconButton(
             icon: Icon(Icons.exit_to_app_rounded, color: Colors.red),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushAndRemoveUntil(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) {
+                    return LoginPage();
+                  },
+                ),
+                (route) => false,
+              );
             }),
       ),
       body: PageView(
@@ -35,7 +45,7 @@ class _CBNBState extends State<CBNB> {
         children: <Widget>[
           HomePage(),
           NewsPage(),
-          ProfilePage(),
+          ProfilePage(widget.username),
         ],
         onPageChanged: (page) {
           setState(() {

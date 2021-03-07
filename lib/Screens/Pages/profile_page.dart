@@ -1,13 +1,9 @@
 part of 'pages.dart';
 
-class ProfilePage extends StatefulWidget {
-  ProfilePage({Key key}) : super(key: key);
+class ProfilePage extends StatelessWidget {
+  final String username;
+  ProfilePage(this.username);
 
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,8 +12,8 @@ class _ProfilePageState extends State<ProfilePage> {
         CircleAvatar(
           child: Icon(Icons.person),
         ),
-        Text("Nama"),
-        Text("Tingkat"),
+        Text("Selamat Datang"),
+        Text(username),
       ],
     );
   }

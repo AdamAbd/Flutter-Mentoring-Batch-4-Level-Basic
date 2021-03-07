@@ -9,6 +9,8 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController user = TextEditingController();
   TextEditingController pass = TextEditingController();
 
+  String username = '';
+
   Future login() async {
     var url = "https://coba-database.000webhostapp.com/coba_database/login.php";
     var response = await http.post(url, body: {
@@ -16,7 +18,16 @@ class _LoginPageState extends State<LoginPage> {
       "password": pass.text,
     });
     var data = json.decode(response.body);
-    if (data == "Success") {
+    if (data.length == 0) {
+      Fluttertoast.showToast(
+        msg: "Username and password invalid!",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    } else {
       Fluttertoast.showToast(
         msg: "Selamat Datang",
         toastLength: Toast.LENGTH_SHORT,
@@ -26,19 +37,15 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
         context,
         CupertinoPageRoute(
-          builder: (context) => CBNB(),
+          builder: (context) => CBNB(username),
         ),
       );
-    } else {
-      Fluttertoast.showToast(
-        msg: "Username and password invalid!",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-      );
+
+      setState(() {
+        username = data[0]['username'];
+      });
     }
+    return data;
   }
 
   @override
