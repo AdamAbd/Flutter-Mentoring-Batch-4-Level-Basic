@@ -75,6 +75,7 @@ class _DictionaryPageState extends State<DictionaryPage> {
                       CupertinoTextField(
                         controller: searchController,
                         onChanged: onSearch,
+                        textCapitalization: TextCapitalization.sentences,
                         decoration: BoxDecoration(
                             color: Colors.grey[200],
                             borderRadius: BorderRadius.all(

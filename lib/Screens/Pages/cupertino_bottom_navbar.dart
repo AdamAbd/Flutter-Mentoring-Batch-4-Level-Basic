@@ -22,7 +22,13 @@ class _CBNBState extends State<CBNB> {
     return Scaffold(
       appBar: CupertinoNavigationBar(
         middle: Text('PeternakanApp', style: GoogleFonts.openSans()),
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
+        trailing: IconButton(
+            icon: Icon(Icons.exit_to_app_rounded, color: Colors.red),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
       ),
       body: PageView(
         controller: _pageController,

@@ -10,6 +10,7 @@ class _HomePageState extends State<HomePage> {
   List<ModelNews> listNews = [];
 
   var loading = false;
+  var _loading = false;
 
   Future<Null> getData() async {
     setState(() {
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<Null> getNews() async {
     setState(() {
-      loading = true;
+      _loading = true;
     });
     final responeseData = await http
         .get("http://coba-database.000webhostapp.com/coba_database/news.php");
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         for (Map i in data) {
           listNews.add(ModelNews.fromJson(i));
         }
-        loading = false;
+        _loading = false;
       });
     }
   }
@@ -120,8 +121,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(
                       height: 180.0,
-                      child: listNews == null
-                          ? null
+                      child: _loading
+                          ? Center(child: CupertinoActivityIndicator())
                           : CarouselSlider.builder(
                               itemCount: 3,
                               itemBuilder: (context, index, _) {
