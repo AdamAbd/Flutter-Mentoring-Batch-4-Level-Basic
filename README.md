@@ -1,16 +1,7 @@
 # flutter_mentoring_basic_batch_4
 
-A new Flutter project.
+Flutter projek untuk hasil code task FMBB 4
 
-## Getting Started
+##  Task 4 Flutter Basic
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/55482107/110284008-ad96b080-8013-11eb-820c-94c9950d8fc1.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/55482107/110284007-ad96b080-8013-11eb-97dd-4d8e543800ae.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/55482107/110284006-acfe1a00-8013-11eb-896a-8a72771dc5a8.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/55482107/110284004-ac658380-8013-11eb-8c8f-b05cb2dc2e8e.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/55482107/110284002-abcced00-8013-11eb-9ccb-d8ae7faef84e.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/55482107/110284000-aa032980-8013-11eb-9828-d4e3fdcf7794.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/55482107/110284001-ab345680-8013-11eb-9f6c-ad2ab5b56028.jpeg" width="30%"></img> 
