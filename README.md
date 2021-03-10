@@ -1,6 +1,6 @@
 # flutter_mentoring_basic_batch_4
 
-Flutter projek untuk hasil code task FMBB 4
+Flutter projek untuk task dari FMBB 4
 
 ##  Task 4 Flutter Basic
 
